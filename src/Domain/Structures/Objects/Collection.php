@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Domain\Structures\Objects;
+
+use App\Domain\Structures\Objects\AbstractCollection;
+
+class Collection extends AbstractCollection
+{
+    private $collectionType;
+
+    public function __construct(string $collectionType, array $data = [])
+    {
+        $this->collectionType = $collectionType;
+        parent::__construct($data);
+    }
+
+    public function getType(): string
+    {
+        return $this->collectionType;
+    }
+}
